@@ -63,7 +63,7 @@ function formatStudentRecords(data) {
   }
 
   // Remove empty record(s)
-  students = students.filter(student => student.length > 3);
+  students = students.filter(student => student.length >= 3);
 
   // Format records for import
   students = students.map(student => formatStudentRecord(student)).join(', ');
@@ -84,4 +84,4 @@ window.onload = function() {
       showImportError(err);
     }
   });
-}
+};
