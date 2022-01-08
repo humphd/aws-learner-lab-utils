@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AWS Learner Lab Utils</title>
+    <link rel="stylesheet" href="https://unpkg.com/bamboo.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>AWS Learner Lab Utils</h1>
+      </header>
+
+      <section id="format-students">
+        <h2>Format Students</h2>
+        <p>
+          Students can be imported using both their name and email at once (see <a href="https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-add-users-to-a-course/ta-p/1119#search_by_email">docs</a>).
+          Download a <code>.csv</code> file of your students from Blackboard (in Full Grade Centre click "work offline", download, user 
+          info only, separated by comma). Select your file here to format the student records for import.
+        </p>
+        <div>
+          <h3>Input</h3>
+          <label for="csv-file-input">Choose a .csv file to process:</label>
+          <input type="file" id="csv-file-input" accept=".csv">
+        </div>
+        <div>
+          <h3>Output</h3>
+          <div id="format-error-message" hidden>
+            <p><strong>Error parsing .csv file:</strong>&nbsp;<span id="format-errors"></span></p>
+          </div>
+          <textarea id="student-records"></textarea>
+        </div>
+      </section>
+
+    </main>
+    <script src="https://unpkg.com/papaparse@5.3.1/papaparse.min.js"></script>
+    <script src="./format-csv.js"></script>
+  </body>
+</html>
